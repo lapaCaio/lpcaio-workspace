@@ -363,8 +363,10 @@ describe('Cadastro de Usuário - Cadastrar', () => {
         cy.estaMarcada('.form-check-input')    
         cy.preencheData('.input-date-picker > img', -10)
 
-        cy.get('.form-group > .primary').click({force:true})
-        cy.get('.form-group > .primary').should('be.visible')
+        cy.get('.form-group > .primary')
+            .click({force:true})
+        cy.get('.form-group > .primary')
+            .should('be.visible')
     })
     it.only('TC033 - Teste Salvar Campo "Senha" Vazio', () => {
         cy.gerarNome('.col-6 > .inpunt-register')
@@ -395,15 +397,18 @@ describe('Cadastro de Usuário - Cadastrar', () => {
         cy.preencheListboxes(4)
         cy.gerarSenha('.row.ng-untouched > :nth-child(1) > .ng-untouched', 
             '.row.ng-untouched > :nth-child(2) > .ng-untouched')
-        cy.get('.row.ng-untouched > :nth-child(2) > .ng-untouched').clear()
+        cy.get('.row.ng-untouched > :nth-child(2) > .ng-untouched')
+            .clear()
         cy.checkBox('.form-check-input')   
         cy.estaMarcada('.form-check-input')    
         cy.preencheData('.input-date-picker > img', -10)
 
         cy.get('.row.ng-star-inserted > :nth-child(2) > .ng-star-inserted')
             .should('have.text', "As senhas não são iguais")
-        cy.get('.form-group > .primary').click({force:true})
-        cy.get('.form-group > .primary').should('be.visible')
+        cy.get('.form-group > .primary')
+            .click({force:true})
+        cy.get('.form-group > .primary')
+            .should('be.visible')
     })
 
     
