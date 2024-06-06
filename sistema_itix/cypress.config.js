@@ -1,6 +1,8 @@
-const { defineConfig } = require("cypress");
+import { defineConfig } from "cypress"
 
-module.exports = defineConfig({
+
+export default defineConfig({
+  projectId: "hf1asv",
   video: true,
   e2e: {
     setupNodeEvents(on, config) {
